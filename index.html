@@ -1,11 +1,30 @@
 <html>
 <head>
+     <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            if(getUrlParamater("ex1") != null)
+            {
+                window.location = "com.salesforce.fieldservice://v1/sObject/0WO5500000001UZGAA";        
+            }
+        });
     <script type="text/javascript">
     function clickMe()
     {
         window.location = document.getElementById("scheme").value;
 
     }
+        function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    };
+	
+	
     </script>
 </head>
 <body>
