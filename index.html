@@ -5,8 +5,14 @@
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
     <script type="text/javascript">
+	function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    };
         $(document).ready(function(){
-            if(getUrlParamater("ex1") != null)
+            if(getUrlParameter("ex1") != null)
             {
                 window.location = "com.salesforce.fieldservice://v1/sObject/0WO5500000001UZGAA";        
             }
@@ -17,12 +23,7 @@
         window.location = document.getElementById("scheme").value;
 
     }
-        function getUrlParameter(name) {
-        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-        var results = regex.exec(location.search);
-        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-    };
+       
 	
 	
     </script>
